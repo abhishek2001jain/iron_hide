@@ -22,7 +22,7 @@ describe IronHide::Rule do
     end
 
     let(:action)   { 'read' }
-    let(:resource) { double('test_resource') }
+    let(:resource) { double('test_resource', class_name: "TestResource") }
     let(:user)     { double('user') }
 
     before do

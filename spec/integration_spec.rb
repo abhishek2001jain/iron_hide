@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'tempfile'
+require 'pry'
 
 describe "Integration Testing" do
   before(:all) do
@@ -113,7 +114,11 @@ describe "Integration Testing" do
   end
 
   class TestResource
-    attr_accessor :active
+    attr_accessor :active, :class_name
+
+    def initialize()
+      @class_name = self.class.name
+    end
   end
 
   let(:user)     { TestUser.new }
